@@ -3,7 +3,7 @@ name: Code Scanning and PR Check
 on:
   pull_request:
     branches:
-      - '*'
+      - 'main'
 
 jobs:
   code-scan:
