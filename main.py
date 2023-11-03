@@ -47,3 +47,13 @@ def delete_user_by_email(user_id: int, db: Session = Depends(get_db)):
     db.delete(db_user)
     db.commit()
     return {"message": "User deleted successfully"}
+def test_google_fonts_in_generated_redoc():
+    body_with_google_fonts = get_redoc_html(
+        openapi_url="/docs", title="title"
+    ).body.decode()
+    assert "fonts.googleapis.com" in body_with_google_fonts
+def test_google_fonts_in_generated_redoc():
+    body_with_google_fonts = get_redoc_html(
+        openapi_url="/docs", title="title"
+    ).body.decode()
+    assert "fonts.googleapis.com" in body_with_google_fonts
